@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="details_padding">20dp</dimen>
+    <dimen name="rv_items_padding">8dp</dimen>
+    <dimen name="layout_padding_12dp">12dp</dimen>
+</resources>

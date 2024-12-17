@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.userposts.presentation.screen.login.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_postsListFragment"
+            app:destination="@id/postsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postsListFragment"
+        android:name="com.example.userposts.presentation.screen.posts.PostsListFragment"
+        android:label="My Posts">
+        <action
+            android:id="@+id/action_postsListFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.example.userposts.presentation.screen.comments.CommentsFragment"
+        android:label="Comments"
+        tools:layout="@layout/fragment_comments" >
+        <argument
+            android:name="post"
+            app:argType="com.example.userposts.domain.model.Post" />
+    </fragment>
+</navigation>
